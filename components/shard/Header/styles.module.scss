@@ -1,0 +1,93 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.headerContainer {
+    --headerPaddingVert: 5px;
+    --headerPaddingHorz: var(var(--headerPaddingVert));
+    @include flexCol;
+    background-color: $carrotOrange;
+    padding: var(--headerPaddingVert) var(--headerPaddingHorz);
+
+    @include desktop {
+        --headerPaddingVert: 20px;
+        --headerPaddingHorz: #{$containerPadHorz};
+        @include flexCenter;
+        background-color: $white;
+    }
+
+    .logoContainer {
+        --maxHeight: 30px;
+        --maxWidth: 130px;
+        align-self: center;
+
+        img {
+            max-width: var(--maxWidth);
+            max-height: var(--maxHeight);
+
+            @include desktop {
+                --maxHeight: 38px;
+                --maxWidth: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .mobileHeaderBottom {
+        --mobileHeaderPadding: 15px;
+        @include flexCenter;
+        padding: var(--mobileHeaderPadding);
+
+        @include desktop {
+            --mobileHeaderPadding: 0;
+            color: $carrotOrange;
+            flex: 1;
+
+            i.fa-bars {
+                display: none;
+            }
+        }
+
+        .searchContainer {
+            @include flexCenter;
+            background-color: $white;
+            border-radius: 3px;
+            padding: 5px;
+            flex: 0.7;
+            margin: 0 10px;
+            height: 33px;
+
+            @include desktop {
+                border: 1px solid $carrotOrange;
+                padding: 20px 13px;
+                margin: 0 20px;
+            }
+
+            input {
+                border: none;
+                background-color: inherit;
+                flex: 1;
+
+                &::placeholder {
+                    color: $noble;
+                }
+
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+
+            i {
+                display: none;
+
+                @include desktop {
+                    display: inline;
+                }
+            }
+        }
+
+        .headerIcons {
+            @include flexCenterBetween;
+            flex: 0.3;
+        }
+    }
+}

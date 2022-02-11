@@ -1,0 +1,35 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.trending {
+    @include flex;
+    @include homeSection;
+    flex-wrap: wrap;
+    padding: 20px;
+
+    .product {
+        --col: 2;
+        --spacing: 10px;
+        --marginBottom: 10px;
+        @include flexCol;
+        @include layoutCol(var(--col), var(--spacing));
+        margin-bottom: var(--marginBottom);
+
+        @include desktop {
+            --col: 4;
+            --marginBottom: 20px;
+            padding: 0 10px;
+        }
+
+        .productImage {
+            a {
+                img {
+                    max-height: 197px;
+                }
+            }
+        }
+        &:nth-child(odd) {
+            margin-right: 20px;
+        }
+    }
+}

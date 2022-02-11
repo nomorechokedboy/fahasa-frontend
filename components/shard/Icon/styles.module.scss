@@ -1,0 +1,13 @@
+.iconContainer {
+    @include flexCol;
+    @include alignItems(center);
+
+    span {
+        display: none;
+
+        @include desktop {
+            display: inline;
+            margin-top: 10px;
+        }
+    }
+}

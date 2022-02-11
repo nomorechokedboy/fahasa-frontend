@@ -1,0 +1,38 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.menuHome {
+    @include flex;
+
+    @include desktop {
+        margin-bottom: 20px;
+    }
+
+    .homeFilter {
+        @include generalSection;
+        flex: 0.3;
+
+        .filterHeader {
+            @include text(bold);
+            @include flexCenter2;
+            background-color: $carrotOrange;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .filterList {
+            .filterItem {
+                @include flexCenterBetween;
+                padding: 10px 20px;
+
+                &:hover {
+                    background-color: $navajoWhite;
+                }
+            }
+        }
+    }
+
+    .bannerContainer {
+        flex: 0.7;
+    }
+}

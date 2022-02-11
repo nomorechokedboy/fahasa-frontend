@@ -1,0 +1,47 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.productName {
+    a {
+        @include textTrunkcate(2);
+        flex: 1;
+    }
+}
+
+.productImage {
+    @include flexCenter2;
+}
+
+.priceContainer {
+    @include flex;
+
+    .originPrice {
+        text-decoration: line-through;
+        margin-right: 20px;
+        line-height: 25px;
+    }
+
+    .saleRatio {
+        @include flexCenter2;
+        @include text(bold, 12px);
+        background-color: $fireEngineRed;
+        border-radius: 5px;
+        color: $white;
+        padding: 3px 5px;
+    }
+}
+
+.salePrice {
+    @include salePrice;
+    line-height: 25px;
+}
+
+.productInfo {
+    @include flexCol;
+    flex: 1 1 auto;
+    padding: 10px;
+}
+
+.productInfo > * {
+    margin-bottom: 10px;
+}

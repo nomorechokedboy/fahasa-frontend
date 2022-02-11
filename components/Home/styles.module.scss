@@ -1,0 +1,12 @@
+@import '../scss//mixins';
+@import '../scss/variables';
+
+.container {
+    --padVert: 10px;
+    --padHorz: 0;
+    padding: var(--padVert) var(--padHorz);
+    @include desktop {
+        --padVert: 20px;
+        --padHorz: #{$containerPadHorz};
+    }
+}
